@@ -46,8 +46,7 @@
             €
         </div>
 
-
-
+            
     <?php
             endwhile;
         else:

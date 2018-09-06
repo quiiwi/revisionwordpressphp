@@ -353,6 +353,7 @@ Développement d'un thème complet
 
     ----------------------------------------------------
     5- Création d'un type de contenu "annonce" avec des cahmps personnalisés (CPT UI et AFC)
+    ----------------------------------------------------
 
         //Création d'un type de contenu "annonces" :
 
@@ -426,8 +427,9 @@ Développement d'un thème complet
 
         // exercice: Créer un custon post type "pro" pour afficher les professionnels qui proposent leurs services. Puis vous ajoutez aux champs titre en contenu déjà présent dans ce CPT "pro", les champ "code postal", "ville" et "téléphone". Enfin vous créez un ou deux professionnels et vous les ajoutez au menu principal pour les afficher (pour l'instant on ne voit que le title et le content).
 
-    -----------------------------------------
+    --------------------------------------------
     06- Création des templated spécifiques : single-annonce.php et category-blog-auto.php
+    --------------------------------------------
 
         //Template spécifique pour les annonces :
 
@@ -445,6 +447,51 @@ Développement d'un thème complet
 
             D'après la hiérarchie, je peux crée un tempalte personnalisé category-$slug.php. $slug est le slug de la catégorie Blog Auto, soit "blog-auto" : on crée donc un fichier appelé category-blog-auto.php
 
+    --------------------------------------------
+    07- Création du template spécifique : category.php
+    --------------------------------------------
+
+        //Nous allons customiser la page category.php pour afficher la liste des annonces en fonction de la catégorie choisie dans le menu de navigation.
+
+            Quand on clique sur une catégorie d'annonces, par défaut WP sélectionne les ARTICLES de cette catégorie. Nous, nous voulons les posts de type ANNONCE (et non pas article). Mais WP ne connaît pas ce type car c'est nous qui l'avons créé ! Il nous faut donc faire notre oriore requête en BDD pour sélectionner les posts de type ANNONCE avant de les afficher.
+
+            Pour le code, voir le fichier category.php
+
+    --------------------------------------------
+    08- Afficher la dernière annonce parue
+    --------------------------------------------
+
+        //Nous allon créer une alerte qui affiche la dernière annonce parue dans la barre latérale de droite (fichier sidebar-droite.php).
+
+            Pour le code, voir le fichier sidebar-droite.php
 
 
 
+------------------------------
+EXERCICES
+
+    Compléments avant exercices :
+        - On crée un template de base archive.php en copiant page.php (ainsi on aura tous les templates de bases dans notre thème).
+
+        -pour pouvoir afficher "tous les professionnels" dans le menu : on va dans CPT UI > bloc Settings > champ Has Archive que l'on met a TRUE. Cela permet de générer des archives (= liste des "pros") dans le template archive.php
+            Puis on va dans Apparence > Menus > et on ajoute à notre menu le lien "All Professionnels" que l'on renomme "Tous les professionnels".
+
+-------------------------------
+Exercice : 
+    -quand on clique sur le lien de menu "Tous les professionnels", on affiche un template spécifique qui affiche la liste des pros avec les infos : titre, code postal et ville
+
+--------------------------------
+Exercice :
+    -Quand on clique sur un professionnel de la liste, on affiche la page détaillée de clui-ci : créer cette page qui indique son nom, sa description, son code postal, sa ville et son téléphone. De plus, vous mettez à droite de cette page la barre latérale qui contient la dernière annonce de véhicule.
+
+    Ajouter sous la page détaillée du professionnel un lien "retour vers la liste des professionnels".
+
+--------------------------------
+Exercice :
+    Ajouter en bas de la page d'accueil dans 2 blocs côte-à-côte sous le contenu :
+        - dans le bloc de gauche : la dernière annonce parue (photo cliquable, titre, prix)
+        - dans le bloc de droite : les trois derniers professionnels inscits (nom cliquable, code postal, ville).
+
+--------------------------------
+Exercice :
+Creer un thème enfant de eprojet. Puis vous faites un template personnalisé de la page contact créée dans le back-office : on y met la barre latérale de droite à GAUCHE.

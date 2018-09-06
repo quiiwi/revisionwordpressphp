@@ -15,7 +15,7 @@ function eprojet_init_sidebar(){ //notre fonction qui contient la décalration d
     ));
 
     register_sidebar(array(
-        'name' => 'footer de gauche', //Nom qui aooaraît dans le back-office
+        'name' => 'footer de gauche', //Nom qui apparaît dans le back-office
         'id' => 'footer-gauche',    //Identifiant unique de la pour pour pouvoir l'appeler dans un template
         'description' => 'Cette zibe de widget est dans le footer de gauche' //Description qui apparait dans le BO
     ));
@@ -31,6 +31,8 @@ function eprojet_init_menu(){
     register_nav_menu('primary','menu principal'); // on déclare une zone de menu d'id "primary" et de nom "menu principal" dans le back-office
 
     register_nav_menu('secondary','menu footer');
+
+    register_nav_menu('third','test');
 }
 
 add_action('init','eprojet_init_menu'); // WP exécute notre fonction eprojet_init_menu lors de son initialisation (= 'init')

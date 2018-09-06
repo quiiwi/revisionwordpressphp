@@ -1,0 +1,12 @@
+/*
+Theme Name: eprojet-child
+Template: eprojet
+*/
+
+@import url("../eprojet/style.css");
+
+/* à partir d'ici, on met le CSS spécifique au thème enfant */
+
+.wrap {
+    background:pink;
+}
